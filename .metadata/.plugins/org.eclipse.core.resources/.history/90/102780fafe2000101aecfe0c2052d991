@@ -1,0 +1,29 @@
+package TestClassPackage;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import BaseClassPackage.BaseClass;
+import PageObjectClass.AccountPageObjectClass;
+import PageObjectClass.HomePageObjectClass;
+import PageObjectClass.LoginObjectCLass;
+
+public class LoginTestClass extends BaseClass {
+	
+	@Test(dataProviderClass=Utilities.DataProvidersClass.class)
+	public void login(String email, String password) {
+		HomePageObjectClass hp=new HomePageObjectClass(driver);
+		LoginObjectCLass lp=new LoginObjectCLass(driver);
+		AccountPageObjectClass ap=new AccountPageObjectClass(driver);
+		hp.clickDropDown();
+		hp.clickLoginOption();
+		lp.getUserEmail(email);
+		lp.getUserPassword(password);
+		lp.clickLoginBtn();
+		String text=ap.checkText();
+		Assert.assertEquals(text,"My Account");
+		ap.clickLogout();
+		
+	}
+
+}

@@ -1,0 +1,80 @@
+package PageObjectClass;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class RegistrationPageObjectClass extends BasePage {
+
+	public RegistrationPageObjectClass(WebDriver driver) {
+		super(driver);
+	}
+	
+	@FindBy(id="input-firstname")
+	WebElement fName;
+	
+	@FindBy(id="input-lastname")
+	WebElement lName;
+	
+	@FindBy(css="#input-email")
+	WebElement email;
+	
+	@FindBy(css="input#input-telephone")
+	WebElement telephone;
+	
+	@FindBy(id="input-password")
+	WebElement password;
+	
+	@FindBy(xpath="//input[@id='input-confirm']")
+	WebElement confirmPassword;
+	
+	@FindBy(xpath="//input[@name='agree']")
+	WebElement checkBox;
+	
+	@FindBy(css="input[value='Continue']")
+	WebElement continueBtn;
+	
+	@FindBy(xpath="//div[@id='content']/h1")
+	WebElement successMsg;
+	
+	public void setFName(String firstName) {
+		fName.sendKeys(firstName);
+	}
+	public void setLName(String lastName) {
+		fName.sendKeys(lastName);
+	}
+	public void setEmail(String userEmail) {
+		email.sendKeys(userEmail);
+	}
+	public void setTelephone(String phone) {
+		telephone.sendKeys(phone);
+	}
+	public void setPassword(String pwd) {
+		password.sendKeys(pwd);
+	}
+	public void setConfirmPwd(String cpwd) {
+		confirmPassword.sendKeys(cpwd);
+	}
+	public void clickCheckBox() {
+		checkBox.click();
+	}
+	public void clickCOntinueBtn() {
+		continueBtn.click();
+	}
+	
+	public void getSuccessMsg() {
+		
+		try {
+			if(successMsg.isDisplayed()) {
+			String msg=successMsg.getText();
+			System.out.println("Success mesg: "+msg);
+
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	
+}

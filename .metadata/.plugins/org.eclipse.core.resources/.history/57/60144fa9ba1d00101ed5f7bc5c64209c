@@ -1,0 +1,36 @@
+package TestClassPackage;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import PageObjectClass.HomePageObjectClass;
+import PageObjectClass.RegistrationPageObjectClass;
+
+public class RegistrationTestClass extends BaseClass {
+	
+	@Test
+	public void registration() {
+		HomePageObjectClass hp=new HomePageObjectClass(driver);
+		hp.clickDropDown();
+		hp.clickRegistrationOption();
+		
+		RegistrationPageObjectClass rp=new RegistrationPageObjectClass(driver);
+		rp.setFName("Nisha");
+		rp.setLName("Rai");
+		rp.setEmail("nisha3@test.com");
+		rp.setTelephone("1234567898");
+		rp.setPassword("test123");
+		rp.setConfirmPwd("test123");
+		rp.clickCheckBox();
+		rp.clickCOntinueBtn();
+		String msg=rp.getSuccessMsg();
+		System.out.println("Success Message: "+msg);
+		Assert.assertEquals(msg, "Your Account Has Been Created!");
+	}
+}

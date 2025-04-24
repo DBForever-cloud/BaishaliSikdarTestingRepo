@@ -1,0 +1,18 @@
+package TestClassPackage;
+
+import org.testng.annotations.Test;
+
+import BaseClassPackage.BaseClass;
+import PageObjectClass.LoginObjectCLass;
+
+public class LoginTestClass extends BaseClass {
+	
+	@Test
+	public void login() {
+		LoginObjectCLass lp=new LoginObjectCLass(driver);
+		lp.getUserEmail("bs@test.com");
+		lp.getUserPassword("Test123@");
+		lp.clickLoginBtn();
+	}
+
+}

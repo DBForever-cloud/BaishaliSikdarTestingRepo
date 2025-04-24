@@ -1,0 +1,61 @@
+package PageObjectClass;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class RegistrationPageObjectClass extends BasePage {
+
+	WebDriver driver;
+	public RegistrationPageObjectClass(WebDriver driver) {
+		super(driver);
+	}
+	
+	@FindBy(id="input-firstname")
+	WebElement fName;
+	
+	@FindBy(id="input-lastname")
+	WebElement lName;
+	
+	@FindBy(css="#input-email")
+	WebElement email;
+	
+	@FindBy(css="input#input-telephone")
+	WebElement telephone;
+	
+	@FindBy(name="cc")
+	WebElement password;
+	
+	@FindBy(xpath="//input[@id='input-confirm']")
+	WebElement confirmPassword;
+	
+	@FindBy(xpath="//input[@name='agree']")
+	WebElement checkBox;
+	
+	@FindBy(css="input[value='Continue']")
+	WebElement continueBtn;
+	
+	public void setFName(String firstName) {
+		fName.sendKeys(firstName);
+	}
+	public void setLName(String lastName) {
+		fName.sendKeys(lastName);
+	}
+	public void setEmail(String userEmail) {
+		email.sendKeys(userEmail);
+	}
+	public void setLName(String lastName) {
+		fName.sendKeys(lastName);
+	}
+	public void setLName(String lastName) {
+		fName.sendKeys(lastName);
+	}
+	public void setLName(String lastName) {
+		fName.sendKeys(lastName);
+	}
+	public void setLName(String lastName) {
+		fName.sendKeys(lastName);
+	}
+	
+	
+}

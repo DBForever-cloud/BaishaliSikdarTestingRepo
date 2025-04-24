@@ -1,0 +1,13 @@
+package Utilities;
+
+import org.testng.annotations.DataProvider;
+
+public class DataProvidersClass {
+	
+	@DataProvider(name="dataPro")
+	public Object[][] getCreds() {
+		Object[][] data= {{"nisha@test.com","test123"},{"misha@test.com","abc123"},{"diya@test.com","test"},{"bs@test.com","bsTest123"}};
+		return data;
+	}
+
+}

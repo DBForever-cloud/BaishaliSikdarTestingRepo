@@ -1,0 +1,27 @@
+package PageObjectClass;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HomePageObjectClass extends BasePage{
+	
+	WebDriver driver;
+	public HomePageObjectClass(WebDriver driver) {
+		super(driver);
+	}
+	
+	@FindBy(xpath="//ul[@class='dropdown-menu dropdown-menu-right']")
+	WebElement myAccountDropDown;
+	
+	@FindBy(xpath="//ul[@class='dropdown-menu dropdown-menu-right']/li/a[text()='Register']")
+	WebElement registerOption;
+	
+	public void clickDropDown() {
+		myAccountDropDown.click();
+	}
+	
+	public void clickRegistrationOption() {
+		registerOption.click();
+	}
+}

@@ -1,0 +1,11 @@
+package PageObjectClass;
+
+import org.openqa.selenium.WebDriver;
+
+public class RegistrationPageObjectClass extends BasePage {
+
+	WebDriver driver;
+	public RegistrationPageObjectClass(WebDriver driver) {
+		super(driver);
+	}
+}
