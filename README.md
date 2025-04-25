@@ -1,6 +1,9 @@
-E-Commerce Website – Login & Registration Automation
 Please Note: The Project is under master branch.
+
 Project Name: OpenCartDemo
+
+E-Commerce Website – Login & Registration Automation
+
 
 This project automates the login and registration functionalities of a sample e-commerce website using Selenium WebDriver, TestNG, and Core Java.
 
